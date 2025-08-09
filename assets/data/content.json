@@ -1,0 +1,63 @@
+{
+  "business_name": "AJ’s Installs",
+  "tagline": "Mobile Auto Installs — Hamilton & GTA",
+  "phone": "+1-289-788-8710",
+  "email": "Ajsautoinstalls@gmail.com",
+  "promo": [
+    "$100 dashcam installs",
+    "$200 dashcam + reverse + battery",
+    "Use code ajsinstalls for 10% off at KuerLED"
+  ],
+  "hero_title": "Clean, pro installs — we come to you.",
+  "hero_sub": "Dashcams, reverse cams, LED footwells, RGB head/taillights. Hidden wiring. Battery-safe hardwires. Same‑day slots.",
+  "services": [
+    {
+      "title": "Standard Dashcam Install",
+      "desc": "Single or dual dashcam, tidy hidden wiring, basic setup.",
+      "price": "$100"
+    },
+    {
+      "title": "Dashcam + Reverse + Battery",
+      "desc": "Reverse cam on trunk/plate and battery‑safe hardwire.",
+      "price": "$200"
+    },
+    {
+      "title": "LED Footwells (Sedan)",
+      "desc": "All four footwells. Includes parts and clean controller placement.",
+      "price": "$50"
+    },
+    {
+      "title": "RGB Headlights & Taillights",
+      "desc": "Controller wiring, fuse tap & testing, app pairing.",
+      "price": "Quote"
+    }
+  ],
+  "reviews": [
+    {
+      "text": "Dashcam install looks factory. He came to my driveway and cleaned up after. 10/10.",
+      "author": "M., Hamilton"
+    },
+    {
+      "text": "Reverse cam + hardwire done right. Quick, friendly, and explained the app.",
+      "author": "A., Mississauga"
+    },
+    {
+      "text": "LED footwells look OEM. Great value.",
+      "author": "J., Burlington"
+    }
+  ],
+  "gallery": [
+    {
+      "image": "assets/uploads/example1.jpg",
+      "caption": "Dashcam mirror — after"
+    },
+    {
+      "image": "assets/uploads/example2.jpg",
+      "caption": "Reverse cam — plate mount"
+    },
+    {
+      "image": "assets/uploads/example3.jpg",
+      "caption": "LED footwells — front"
+    }
+  ]
+}

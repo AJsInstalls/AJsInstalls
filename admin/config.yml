@@ -1,0 +1,43 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+publish_mode: editorial_workflow
+
+collections:
+  - name: "site"
+    label: "Site Content"
+    files:
+      - file: "assets/data/content.json"
+        label: "Homepage Content"
+        name: "homepage"
+        fields:
+          - { label: Business Name, name: business_name, widget: string }
+          - { label: Tagline, name: tagline, widget: string }
+          - { label: Phone, name: phone, widget: string }
+          - { label: Email, name: email, widget: string }
+          - { label: Promo Lines, name: promo, widget: list, field: {label: Line, name: line, widget: string} }
+          - { label: Hero Title, name: hero_title, widget: string }
+          - { label: Hero Subtitle, name: hero_sub, widget: text }
+          - label: Services
+            name: services
+            widget: list
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: desc, widget: text }
+              - { label: Price, name: price, widget: string }
+          - label: Reviews
+            name: reviews
+            widget: list
+            fields:
+              - { label: Text, name: text, widget: text }
+              - { label: Author, name: author, widget: string }
+          - label: Gallery
+            name: gallery
+            widget: list
+            fields:
+              - { label: Image, name: image, widget: image }
+              - { label: Caption, name: caption, widget: string }
