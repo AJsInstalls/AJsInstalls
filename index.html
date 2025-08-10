@@ -1,100 +1,32 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AJ’s Installs — Mobile Dashcam & Lighting</title>
-  <meta name="theme-color" content="#0b0f14">
-  <link rel="icon" href="assets/favicon.svg">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-</head>
-<body>
-  <header class="site-header">
-    <div class="container header-row">
-      <strong id="bizName">AJ’s Installs</strong>
-      <nav class="nav">
-        <a href="#shop">Services</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#contact">Contact</a>
-        <a class="btn" href="/admin/">Edit website</a>
-      </nav>
-    </div>
-  </header>
-
-  <section class="hero">
-    <div class="container">
-      <h1 id="heroTitle">Loading…</h1>
-      <p id="heroSub" class="lead"></p>
-      <ul id="promoList" class="promo"></ul>
-      <div class="cta-row">
-        <a id="textBtn" class="btn btn-primary" href="#">Text</a>
-        <a id="emailBtn" class="btn btn-ghost" href="#">Email</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="shop" class="section">
-    <div class="container">
-      <h2>Services</h2>
-      <div id="services" class="grid cards-4"></div>
-    </div>
-  </section>
-
-  <section id="reviews" class="section alt">
-    <div class="container">
-      <h2>Reviews</h2>
-      <div id="reviewsList" class="grid cards-3"></div>
-    </div>
-  </section>
-
-  <section id="gallery" class="section">
-    <div class="container">
-      <h2>Gallery</h2>
-      <div id="galleryGrid" class="grid cards-3"></div>
-    </div>
-  </section>
-
-  <section id="contact" class="section contact">
-    <div class="container">
-      <h2>Contact</h2>
-      <p><b>Phone:</b> <span id="phoneTxt"></span> &nbsp; <b>Email:</b> <a id="emailLink"></a></p>
-    </div>
-  </section>
-
-  <footer class="site-footer">
-    <div class="container foot">
-      <div>© <span id="year"></span> <span id="bizNameFoot">AJ’s Installs</span></div>
-      <div><a href="/admin/">Editor</a></div>
-    </div>
-  </footer>
-
-<script>
-fetch('assets/data/content.json?_=' + Date.now()).then(r => r.json()).then(c => {
-  document.getElementById('bizName').textContent = c.business_name;
-  document.getElementById('bizNameFoot').textContent = c.business_name;
-  document.getElementById('heroTitle').textContent = c.hero_title;
-  document.getElementById('heroSub').textContent = c.hero_sub;
-  document.getElementById('phoneTxt').textContent = c.phone;
-  document.getElementById('textBtn').href = 'sms:' + c.phone.replace(/[^0-9+]/g,'');
-  document.getElementById('emailBtn').href = 'mailto:' + c.email;
-  document.getElementById('emailLink').href = 'mailto:' + c.email;
-  document.getElementById('emailLink').textContent = c.email;
-
-  const promoUL = document.getElementById('promoList'); c.promo.forEach(line => { const li=document.createElement('li'); li.textContent=line; promoUL.appendChild(li); });
-  const svc = document.getElementById('services');
-  c.services.forEach(s => { const card=document.createElement('article'); card.className='card'; card.innerHTML=`<h3>${s.title}</h3><p class='muted'>${s.desc}</p><div class='price'>${s.price}</div>`; svc.appendChild(card); });
-  const revs = document.getElementById('reviewsList');
-  c.reviews.forEach(r => { const q=document.createElement('blockquote'); q.className='card review'; q.innerHTML=`<p>${r.text}</p><cite>— ${r.author}</cite>`; revs.appendChild(q); });
-  const gal = document.getElementById('galleryGrid');
-  c.gallery.forEach(g => { const div=document.createElement('div'); div.className='card'; div.innerHTML=`<img alt='' style='width:100%;border-radius:10px' src='${g.image}'><p class='fine'>${g.caption||''}</p>`; gal.appendChild(div); });
-});
-document.getElementById('year').textContent = new Date().getFullYear();
-if (window.netlifyIdentity) { window.netlifyIdentity.on('init', user => { if (!user) { window.netlifyIdentity.on('login', () => { document.location.href = '/admin/'; }); } }); }
-</script>
-<link rel="stylesheet" href="styles.css">
-</body>
-</html>
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AJ’s Installs — Dashcams, LEDs & More</title>
+<meta name="description" content="Mobile installs in Hamilton & GTA — dashcams, reverse cameras, LED footwells, RGB headlights & taillights.">
+<link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/assets/css/site.css">
+<meta property="og:image" content="/assets/img/og.jpg"></head><body>
+<nav class="nav"><div class="container row">
+  <div class="brand"><img class="logo" src="/assets/img/logo.png" alt="AJ’s Installs logo"><strong>AJ’s Installs</strong></div>
+  <div class="links"><a href="#services">Services</a><a href="#gallery">Gallery</a><a href="/legal.html">Legal</a><a class="btn" href="sms:+12897888710">Text us</a></div>
+</div></nav>
+<header class="hero"><div class="container panel">
+  <h1>Clean, professional installs — we come to you.</h1>
+  <p>Dashcams, reverse cameras, LED footwells, and RGB lighting. Hidden wiring and battery‑safe hardwires.</p>
+  <p><a class="button" href="sms:+12897888710">Text to book</a></p>
+</div></header>
+<main class="container">
+  <h2>Services</h2>
+  <div class="cards">
+    <div class="card"><h3>Standard Dashcam Install</h3><p>Tidy hidden wiring, clean setup.</p><strong>$100</strong></div>
+    <div class="card"><h3>Dashcam + Reverse + Battery</h3><p>Reverse cam + battery‑safe hardwire.</p><strong>$200</strong></div>
+    <div class="card"><h3>LED Footwells (Sedan)</h3><p>All four footwells, controller placement.</p><strong>$50</strong></div>
+    <div class="card"><h3>RGB Headlights & Taillights</h3><p>Controller wiring & app pairing.</p><strong>Quote</strong></div>
+  </div>
+  <h2 id="gallery" style="margin-top:24px">Gallery</h2>
+  <p>After you deploy, upload your photos to <code>assets/img/</code> and they’ll appear here automatically if you use the names g1.jpg, g2.jpg, …</p>
+  <div class="gallery">
+    <img src="/assets/img/og.jpg" alt="Install sample">
+  </div>
+</main>
+<footer class="footer container"><div>© ajsinstalls.ca</div><div>Hamilton • GTA</div></footer>
+<script src="/assets/js/site.js"></script>
+</body></html>
